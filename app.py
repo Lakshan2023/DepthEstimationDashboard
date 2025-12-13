@@ -76,22 +76,13 @@ data = {
 
 df = pd.DataFrame(data)
 
-# Metrics where LOWER is better
-lower_better = {"Abs Rel", "Sq Rel", "RMSE", "RMSE log"}
-
-def highlight_best(row):
-    vals = row[1:]
-    best = vals.min() if row["Metric"] in lower_better else vals.max()
-    return [
-        "font-weight: bold; background-color: #d4f4dd"
-        if v == best else ""
-        for v in row
-    ]
-
 styled_df = (
     df.style
-    .apply(highlight_best, axis=1)
     .format("{:.3f}", subset=df.columns[1:])
+    .set_table_styles([
+        {"selector": "th", "props": [("color", "black"), ("font-weight", "bold")]},
+        {"selector": "td", "props": [("text-align", "center")]},
+    ])
 )
 
 st.dataframe(
@@ -102,8 +93,7 @@ st.dataframe(
 
 st.caption(
     "Table: Quantitative comparison of Eigen Network (2014) and DPT-Hybrid "
-    "on the KITTI Eigen split. Values are reported to three decimal places. "
-    "Green-highlighted values indicate the best performance per metric."
+    "on the KITTI Eigen split. Values are reported to three decimal places."
 )
 
 
