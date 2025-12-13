@@ -185,5 +185,5 @@ st.dataframe(
 st.caption(
     "Table: Virtual KITTI benchmark results under challenging environmental conditions. "
     "For each condition, Eigen Network results are reported first, followed by "
-    "DPT-Hybrid model."
+    "DPT-Hybrid model results."
 )
