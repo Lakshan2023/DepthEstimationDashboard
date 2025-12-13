@@ -50,6 +50,7 @@ data = {
         "Sq Rel",
         "RMSE",
         "RMSE log",
+        "SILog"
     ],
     "Eigen et al. (Coarse + Fine)": [
         0.710,
@@ -59,6 +60,7 @@ data = {
         1.417,
         6.056,
         0.262,
+        0.240
     ],
     "DPT-Hybrid (Current Implementation)": [
         0.959,
@@ -68,6 +70,7 @@ data = {
         0.222,
         2.573,
         0.092,
+        8.282
     ],
 }
 
